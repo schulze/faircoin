@@ -7,8 +7,8 @@ import (
 
 func main() {
 	b := make([]byte, 1)
-	n, err := rand.Read(b)
-	if err != nil || n != 1 {
+	_, err := rand.Read(b)
+	if err != nil {
 		panic(err)
 	}
 	winner := b[0] >> 7
